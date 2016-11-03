@@ -1,8 +1,8 @@
 {
     "name": "gitbook-plugin-toggle-chapters",
-    "description": "Toggle Chapters on GitBook",
+    "description": "Toggle/Expand Chapters on GitBook",
     "main": "index.js",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "engines": {
         "gitbook": "*"
     },

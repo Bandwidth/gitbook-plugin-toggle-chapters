@@ -1,11 +1,25 @@
+var cheerio = require('cheerio');
+var path = require('path');
+var fs = require('fs');
+
+var modifyPage = function ($) {
+  $('li.chapter:has(ul.articles)').each(function(){
+    $(this).children('a').after('<i class="fa fa-eye expand" aria-hidden="true"></i>');
+  });
+  $('.active').parents().siblings('.expand').addClass('fa-eye-slash');
+  return $.html();
+}
+
+var urls = [];
+
 module.exports = {
   website: {
     assets: "./book",
     js: [
-      "toggle.js"
+    "toggle.js"
     ],
     css: [
-      "toggle.css"
+    "toggle.css"
     ],
     html: {
       "html:start": function() {
@@ -23,17 +37,36 @@ module.exports = {
     }
   },
   hooks: {
-    // For all the hooks, this represent the current generator
+// For all the hooks, this represent the current generator
 
-    // This is called before the book is generated
-    "init": function() {
-      //console.log("init!");
-    },
+// This is called before the book is generated
+"init": function() {
+//console.log("init!");
+},
 
-    // This is called after the book generation
-    "finish": function() {
-      //console.log("finish!");
-    }
+"page": function (page) {
+  if (this.output.name != 'website') return page;
 
-  }
+  var lang = this.isLanguageBook() ? this.config.values.language : '';
+  if (lang) lang = lang + '/';
+
+  var outputUrl = this.output.toURL('_book/' + lang + page.path);
+
+  urls.push({
+    url: outputUrl + (outputUrl.substr(-5, 5) !== '.html' ? 'index.html' : '')
+  });
+  return page;
+},
+
+// This is called after the book generation
+"finish": function() {
+  urls.forEach(item => {
+    html = fs.readFileSync(item.url, {encoding: 'utf-8'});
+    $ = cheerio.load(html);
+    var newPage = modifyPage($);
+    fs.writeFileSync(item.url, newPage);
+  });
+}
+
+}
 };
