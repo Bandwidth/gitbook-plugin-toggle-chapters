@@ -2,11 +2,11 @@
 
 ## Install it using:
 
-```$ npm install gitbook-plugin-toggle-chapters```
+```$ npm install gitbook-plugin-bandwidth-toggle-chapters```
 
 To use it in your book, add this to book.json:
 ```
 {
-    "plugins": ["toggle-chapters"]
+    "plugins": ["bandwidth-toggle-chapters"]
 }
 ```
