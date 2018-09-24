@@ -6,14 +6,14 @@
     "engines": {
         "gitbook": "*"
     },
-    "homepage": "https://github.com/dtolb/gitbook-plugin-toggle-chapters",
+    "homepage": "https://github.com/Bandwidth/gitbook-plugin-toggle-chapters",
     "repository": {
         "type": "git",
-        "url": "https://github.com/dtolb/gitbook-plugin-toggle-chapters.git"
+        "url": "https://github.com/Bandwidth/gitbook-plugin-toggle-chapters.git"
     },
     "license": "Apache 2",
     "bugs": {
-        "url": "https://github.com/dtolb/gitbook-plugin-toggle-chapters/issues"
+        "url": "https://github.com/Bandwidth/gitbook-plugin-toggle-chapters/issues"
     },
     "author": "Poojan Shrestha <poojans@gmail.com>"
 }
