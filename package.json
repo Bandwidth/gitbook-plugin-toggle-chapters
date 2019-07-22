@@ -1,5 +1,5 @@
 {
-    "name": "gitbook-plugin-bandwidth-toggle-chapters",
+    "name": "gitbook-plugin-bandwidth-toggle-chapters-stopgap",
     "description": "Toggle/Expand Chapters on GitBook",
     "main": "index.js",
     "version": "0.0.4",
