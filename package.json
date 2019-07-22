@@ -15,5 +15,8 @@
     "bugs": {
         "url": "https://github.com/Bandwidth/gitbook-plugin-toggle-chapters/issues"
     },
-    "author": "Poojan Shrestha <poojans@gmail.com>"
+    "author": "Poojan Shrestha <poojans@gmail.com>",
+    "dependencies": {
+        "cheerio": "^1.0.0-rc.3"
+    }
 }
