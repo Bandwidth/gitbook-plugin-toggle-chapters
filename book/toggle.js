@@ -46,7 +46,6 @@ require(["gitbook", "jQuery"], function(gitbook, $) {
 
 
     expand($chapter);
-    $('li.chapter.active').children('.expand').addClass('fa-angle-down');
 
     if ($children.length > 0) {
       $children.show();
